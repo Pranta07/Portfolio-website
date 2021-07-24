@@ -19,6 +19,7 @@ if (navClose) {
     });
 }
 
+
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll(".nav_link");
 
@@ -29,7 +30,24 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
+
 /*==================== ACCORDION SKILLS ====================*/
+const skillsContent = document.querySelectorAll('.skills_content'),
+    skillsHeader = document.querySelectorAll('.skills_header')
+
+function toogleskills() {
+    let itemClass = this.parentNode.className
+
+    for (i = 0; i < skillsContent.length; i++) {
+        skillsContent[i].className = "skills_content skills_close"
+    }
+    if (itemClass === "skills_content skills_close") {
+        this.parentNode.className = "skills_content skills_open"
+    }
+}
+
+skillsHeader.forEach(e => e.addEventListener('click', toogleskills));
+
 
 /*==================== QUALIFICATION TABS ====================*/
 
