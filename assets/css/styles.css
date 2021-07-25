@@ -83,7 +83,6 @@ html {
 }
 
 body {
-    margin: 0 0 var(--header-height) 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
@@ -523,7 +522,7 @@ img {
     color: var(--first-color);
 }
 
-/*==================== CONTACT ME ====================*/
+/*==================== CONTACT Styles ====================*/
 .contact_container {
     row-gap: 3rem;
 }
@@ -621,7 +620,7 @@ img {
 }
 
 /*==================== MEDIA QUERIES ====================*/
-/* For small devices */
+/* For medium small devices */
 @media only screen and (min-width: 500px) {
     .home_content {
         grid-template-columns: max-content 1fr 1fr;
@@ -634,7 +633,8 @@ img {
         justify-self: center;
     }
     .footer_container {
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        justify-content: space-evenly;
     }
 }
 
@@ -695,11 +695,24 @@ img {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    /* contact */
+    .contact_container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    /* footer */
+    .footer_title {
+        font-size: 2rem;
+    }
 }
 
 /* For large devices */
 @media only screen and (min-width: 1024px) {
     .container {
-        max-width: 90%;
+        max-width: 1000px;
     }
 }
